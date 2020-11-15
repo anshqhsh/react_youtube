@@ -14,6 +14,7 @@ function App({ youtube }) {
     setSelectedVideo(video);
   };
   const search = (query) => {
+    setSelectedVideo(null);
     youtube
       .search(query) //프리티어 자동 방자
       .then((videos) => setVideos(videos)); //promise 가 return이 되면 아이탬들이 리런
