@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import { useCallback } from "react";
-import { useState } from "react";
-import styles from "./app.module.css";
-import SearchHeader from "./components/search_header/search_header";
-import VideoDetail from "./components/video_detail/video_detail";
-import VideoList from "./components/video_list/video_list";
+import React, { useEffect } from 'react';
+import { useCallback } from 'react';
+import { useState } from 'react';
+import styles from './app.module.css';
+import SearchHeader from './components/search_header/search_header';
+import VideoDetail from './components/video_detail/video_detail';
+import VideoList from './components/video_list/video_list';
 
 function App({ youtube }) {
   const [videos, setVideos] = useState([]); //useState Api 이용 setvideo는 함수
@@ -19,7 +19,7 @@ function App({ youtube }) {
     youtube
       .search(query) //프리티어 자동 방자
       .then((videos) => setVideos(videos)); //promise 가 return이 되면 아이탬들이 리런
-  }, []); //dependency리스트를 전달 하지 않으면 텅텅빈 배열을 전달
+  }, []); //dependency리스트를 전달 하지 않으면 텅텅빈 배열을 전달 but 메모리에 계속 저장이 되기 때문에 필요한 곳에만 써야함
   useEffect(() => {
     youtube
       .mostPopular() //
@@ -38,7 +38,7 @@ function App({ youtube }) {
           <VideoList
             videos={videos}
             onVideoClick={selectVideo}
-            display={selectedVideo ? "list" : "grid"}
+            display={selectedVideo ? 'list' : 'grid'}
           />
         </div>
       </section>
