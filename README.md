@@ -1,3 +1,6 @@
+리액트로 진행한 YOUTUBE 개인 프로젝트 입니다. 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
